@@ -12,7 +12,7 @@ return {
             require("conform").setup({
                 formatters_by_ft = {
                     lua = { "stylua" },
-                    -- python = { "ruff" }, -- Ruff first
+                    python = { "ruff" }, -- Ruff first
                     java = { "google-java-format" }
                 },
                 format_on_save = {

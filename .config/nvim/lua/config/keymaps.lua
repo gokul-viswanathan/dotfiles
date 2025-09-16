@@ -8,8 +8,11 @@ keymap.set('i', 'jk', '<Esc>', { noremap = true })
 keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename variable" })
 keymap.set("n", "<leader>/", ":noh<cr>", { desc = "Remove highlight" })
 
-vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
-vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover docs" })
+vim.keymap.set('n', 'gd', '<cmd>vsplit | lua vim.lsp.buf.definition()<CR>')
+vim.keymap.set('n', 'gD', '<cmd>split | lua vim.lsp.buf.definition()<CR>')
+vim.keymap.set('n', 'gr', vim.lsp.buf.references)
+vim.keymap.set("n", "<leader>k", vim.lsp.buf.hover, { noremap = true, silent = true })
+-- vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover docs" })
 -- Resize window
 keymap.set("n", "<C-w><left>", "<C-w><")
 keymap.set("n", "<C-w><right>", "<C-w>>")

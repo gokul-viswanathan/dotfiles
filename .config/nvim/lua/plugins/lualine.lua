@@ -1,5 +1,8 @@
 return {
     {
+        "AckslD/swenv.nvim",
+    },
+    {
         "nvim-lualine/lualine.nvim",
         event = "VeryLazy",
         dependencies = {
@@ -21,6 +24,7 @@ return {
                     },
                     lualine_b = {
                         { "branch", icon = "" },
+                        { "swenv", icon = "", },
                         {
                             "diff",
                             colored = true,
@@ -73,6 +77,7 @@ return {
                         { "location", separator = { right = "" }, left_padding = 2 },
                     },
                 },
+                icon = "",
                 inactive_sections = {
                     lualine_a = {},
                     lualine_b = {},
