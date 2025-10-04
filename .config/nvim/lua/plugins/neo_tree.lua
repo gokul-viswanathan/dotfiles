@@ -52,15 +52,45 @@ return {
                 symbols = {
                     -- Change type
                     added = "✚",
-                    modified = "",
+                    modified = "",
                     deleted = "✖",
                     renamed = "󰁕",
                     -- Status type
-                    untracked = "",
-                    ignored = "",
+                    untracked = "",
+                    ignored = "",
                     unstaged = "󰄱",
-                    staged = "",
-                    conflict = "",
+                    staged = "",
+                    conflict = "",
+                },
+            },
+            icon = {
+                folder_closed = "",
+                folder_open = "",
+                folder_empty = "󰜌",
+                default = "*",
+                highlight = "NeoTreeFileIcon"
+            },
+            modified = {
+                symbol = "●",
+                highlight = "NeoTreeModified",
+            },
+            name = {
+                trailing_slash = false,
+                use_git_status_colors = true,
+                highlight = "NeoTreeFileName",
+            },
+            diagnostics = {
+                symbols = {
+                    hint = "",
+                    info = "",
+                    warn = "",
+                    error = "",
+                },
+                highlights = {
+                    hint = "DiagnosticSignHint",
+                    info = "DiagnosticSignInfo",
+                    warn = "DiagnosticSignWarn",
+                    error = "DiagnosticSignError",
                 },
             },
         },

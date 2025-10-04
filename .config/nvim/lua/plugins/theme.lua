@@ -16,6 +16,36 @@
 -- }
 --
 
+-- Centralized theme configuration
+-- When changing themes, update the THEME_CONFIG below and check these files:
+-- - lua/plugins/lualine.lua (theme name)
+-- - lua/plugins/ui.lua (incline colors)
+-- - lua/plugins/git.lua (gitsigns colors)
+-- - lua/config/options.lua (any theme-specific highlights)
+
+local THEME_CONFIG = {
+    name = "github_dark_default",
+    style = "dark_default",
+    colors = {
+        -- GitHub Dark Default theme colors
+        bg = "#0d1117",        -- background
+        bg_dark = "#161b22",   -- darker background
+        bg_darker = "#0d1117", -- even darker background
+        fg = "#c9d1d9",        -- foreground
+        fg_dark = "#8b949e",   -- muted foreground
+        fg_darker = "#6e7681", -- more muted foreground
+        blue = "#58a6ff",      -- blue accent
+        green = "#56d364",     -- green accent
+        red = "#f85149",       -- red accent
+        yellow = "#d29922",    -- yellow accent
+        purple = "#bc8cff",    -- purple accent
+        orange = "#d29922",    -- orange accent
+    }
+}
+
+-- Make theme config available globally for other plugins
+_G.THEME_CONFIG = THEME_CONFIG
+
 return {
     {
         "projekt0n/github-nvim-theme",
@@ -23,19 +53,17 @@ return {
         config = function()
             require("github-theme").setup({
                 options = {
-                    -- Variants: "dark", "dimmed", "dark_default", "light"
-                    -- "dark_default" = GitHub Dark (default)
-                    theme_style = "dark_default",
-                    transparent = false, -- set true if you want your terminal background
+                    theme_style = THEME_CONFIG.style,
+                    transparent = true,
                 },
             })
-            vim.cmd.colorscheme("github_dark_default")
+            vim.cmd.colorscheme(THEME_CONFIG.name)
 
             -- Optional tweaks for line numbers
-            vim.cmd [[
-            hi LineNr guibg=NONE ctermbg=NONE guifg=#6e7681
-            hi CursorLineNr guibg=NONE ctermbg=NONE guifg=#58a6ff
-            ]]
+            vim.cmd(string.format([[
+            hi LineNr guibg=NONE ctermbg=NONE guifg=%s
+            hi CursorLineNr guibg=NONE ctermbg=NONE guifg=%s
+            ]], THEME_CONFIG.colors.fg_darker, THEME_CONFIG.colors.blue))
         end,
     },
 }

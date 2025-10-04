@@ -20,6 +20,8 @@ return {
         },
         opts = {
             options = {
+                mode = "buffers",    -- set to "tabs" to only show tabpages instead
+                numbers = "ordinal", -- "none" | "ordinal" | "buffer_id" | "both" | function
                 close_command = function(n)
                     -- replace with your own logic or bufdelete
                     vim.api.nvim_buf_delete(n, { force = false })
@@ -27,27 +29,86 @@ return {
                 right_mouse_command = function(n)
                     vim.api.nvim_buf_delete(n, { force = false })
                 end,
+                left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
+                middle_mouse_command = nil, -- can be a string | function, see "Mouse actions"
+                indicator = {
+                    icon = '▎', -- this should be omitted if indicator style is not 'icon'
+                    style = 'icon', -- 'icon' | 'underline' | 'none'
+                },
+                buffer_close_icon = '󰅖',
+                modified_icon = '●',
+                close_icon = '',
+                left_trunc_marker = '',
+                right_trunc_marker = '',
                 diagnostics = "nvim_lsp",
-                always_show_bufferline = false,
-                diagnostics_indicator = function(_, _, diag)
+                diagnostics_update_in_insert = false,
+                diagnostics_indicator = function(count, level, diagnostics_dict, context)
                     local icons = {
-                        Error = " ",
-                        Warn  = " ",
-                        Info  = " ",
-                        Hint  = " ",
+                        error = " ",
+                        warning = " ",
+                        info = " ",
+                        hint = " ",
                     }
-                    local ret = (diag.error and icons.Error .. diag.error .. " " or "")
-                        .. (diag.warning and icons.Warn .. diag.warning or "")
+                    local ret = (diagnostics_dict.error and icons.error .. diagnostics_dict.error .. " " or "")
+                        .. (diagnostics_dict.warning and icons.warning .. diagnostics_dict.warning or "")
                     return vim.trim(ret)
                 end,
+                always_show_bufferline = false,
+                persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
+                max_name_length = 18,
+                max_prefix_length = 15,     -- prefix used when a buffer is de-duplicated
+                truncate_names = true,      -- whether or not tab names should be truncated
+                tab_size = 18,
+                show_buffer_icons = true,
+                -- show_buffer_default_icon
+                show_close_icon = true,
+                show_tab_indicators = true,
+                show_duplicate_prefix = true,    -- whether to show duplicate buffer prefix
+                duplicates_across_groups = true, -- whether to consider duplicate paths in different groups as duplicates
+                separator_style = "slant", -- "slant" | "thick" | "thin" | "padded_slant"
+                -- Custom separator colors for better visibility
+                highlights = {
+                    separator = {
+                        fg = "#3d444d", -- Dimmed separator color instead of pure white
+                        bg = "#0d1117",
+                    },
+                    separator_selected = {
+                        fg = "#3d444d",
+                    },
+                    separator_visible = {
+                        fg = "#3d444d",
+                    },
+                },
+                enforce_regular_tabs = false,    -- false | true
                 offsets = {
                     {
                         filetype = "neo-tree",
                         text = "Neo-tree",
                         highlight = "Directory",
                         text_align = "left",
+                        separator = true,
+                    },
+                    {
+                        filetype = "undotree",
+                        text = "Undotree",
+                        highlight = "PanelHeading",
+                        separator = true,
+                    },
+                    {
+                        filetype = "DiffviewFiles",
+                        text = "Diff View",
+                        highlight = "PanelHeading",
+                        separator = true,
                     },
                 },
+                color_icons = true, -- whether or not to add the filetype icon highlights
+                get_element_icon = function(opts)
+                    local devicons = require("nvim-web-devicons")
+                    local icon, hl = devicons.get_icon(opts.filename or "", opts.extension, { default = true })
+                    return icon, hl
+                end,
+                -- show_buffer_default_icon = true,  -- whether or not an unrecognised filetype should show a default icon
+                sort_by = 'insert_after_current', -- 'insert_after_current' |'insert_at_end' | 'id' | 'extension' | 'relative_directory' | 'directory' | 'tabs' | function(buffer_a, buffer_b)
                 ---@param opts bufferline.IconFetcherOpts
                 get_element_icon = function(opts)
                     local devicons = require("nvim-web-devicons")

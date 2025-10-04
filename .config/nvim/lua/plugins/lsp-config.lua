@@ -9,7 +9,11 @@ return {
         "mason-org/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "ts_ls", "basedpyright", },
+                ensure_installed = {
+                    "lua_ls", "ts_ls", "basedpyright", "jdtls", "gopls",
+                    "rust_analyzer", "html", "cssls", "jsonls", "yamlls",
+                    "bashls", "dockerls", "sqls", "ruff"
+                },
                 automatic_installation = true, -- Changed from automatic_enable
             })
         end
@@ -18,17 +22,60 @@ return {
         "neovim/nvim-lspconfig",
         opts = {
             servers = {
-                lua_ls = {},
-                ts_ls = {},
+                lua_ls = {
+                    settings = {
+                        Lua = {
+                            diagnostics = {
+                                globals = { "vim" },
+                            },
+                            workspace = {
+                                library = vim.api.nvim_get_runtime_file("", true),
+                                checkThirdParty = false,
+                            },
+                            telemetry = {
+                                enable = false,
+                            },
+                        },
+                    },
+                },
+                ts_ls = {
+                    settings = {
+                        typescript = {
+                            inlayHints = {
+                                includeInlayParameterNameHints = 'all',
+                                includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+                                includeInlayFunctionParameterTypeHints = true,
+                                includeInlayVariableTypeHints = true,
+                                includeInlayPropertyDeclarationTypeHints = true,
+                                includeInlayFunctionLikeReturnTypeHints = true,
+                                includeInlayEnumMemberValueHints = true,
+                            }
+                        },
+                        javascript = {
+                            inlayHints = {
+                                includeInlayParameterNameHints = 'all',
+                                includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+                                includeInlayFunctionParameterTypeHints = true,
+                                includeInlayVariableTypeHints = true,
+                                includeInlayPropertyDeclarationTypeHints = true,
+                                includeInlayFunctionLikeReturnTypeHints = true,
+                                includeInlayEnumMemberValueHints = true,
+                            }
+                        }
+                    }
+                },
                 basedpyright = {
                     settings = {
                         basedpyright = {
                             analysis = {
                                 typeCheckingMode = "standard",
+                                autoSearchPaths = true,
+                                useLibraryCodeForTypes = true,
+                                diagnosticMode = "workspace",
                             },
                         },
                         python = {
-                            pythonPath = "python", -- Add default python path
+                            pythonPath = "python",
                         },
                     },
                     on_new_config = function(config, root_dir)
@@ -39,7 +86,37 @@ return {
                     end,
                 },
                 jdtls = {},
-                gopls = {},
+                gopls = {
+                    settings = {
+                        gopls = {
+                            analyses = {
+                                unusedparams = true,
+                                shadow = true,
+                            },
+                            staticcheck = true,
+                            gofumpt = true,
+                        },
+                    },
+                },
+                rust_analyzer = {
+                    settings = {
+                        ["rust-analyzer"] = {
+                            checkOnSave = {
+                                command = "clippy",
+                            },
+                            diagnostics = {
+                                enable = true,
+                            },
+                        },
+                    },
+                },
+                html = {},
+                cssls = {},
+                jsonls = {},
+                yamlls = {},
+                bashls = {},
+                dockerls = {},
+                sqls = {},
                 ruff = {},
             }
         },
@@ -48,18 +125,24 @@ return {
 
             -- Get capabilities from your completion plugin
             local capabilities = vim.lsp.protocol.make_client_capabilities()
-            if pcall(require, 'blink.cmp') then
-                capabilities = require('blink.cmp').get_lsp_capabilities(capabilities)
+            local ok, blink_cmp = pcall(require, 'blink.cmp')
+            if ok then
+                capabilities = blink_cmp.get_lsp_capabilities(capabilities)
             end
 
-            -- Setup each server
+            -- Setup each server with error handling
             for server, config in pairs(opts.servers) do
                 -- Merge capabilities
                 config.capabilities = vim.tbl_deep_extend('force', capabilities, config.capabilities or {})
 
-                -- Use the traditional lspconfig setup
-                -- lspconfig[server].setup(config)
-                vim.lsp.config(server, config)
+                -- Setup server with error handling
+                local success, err = pcall(function()
+                    vim.lsp.config(server, config)
+                end)
+
+                if not success then
+                    vim.notify(string.format("Failed to setup LSP server '%s': %s", server, err), vim.log.levels.WARN)
+                end
             end
         end
     },

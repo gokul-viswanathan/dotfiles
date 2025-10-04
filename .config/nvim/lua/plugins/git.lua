@@ -92,9 +92,9 @@ return {
             })
 
             -- Optional: Custom highlights for better visibility
-            vim.api.nvim_set_hl(0, 'GitSignsAdd', { fg = '#9ece6a' }) -- Green
-            vim.api.nvim_set_hl(0, 'GitSignsChange', { fg = '#7aa2f7' }) -- Blue
-            vim.api.nvim_set_hl(0, 'GitSignsDelete', { fg = '#f7768e' }) -- Red
+            vim.api.nvim_set_hl(0, 'GitSignsAdd', { fg = _G.THEME_CONFIG.colors.green }) -- Green
+            vim.api.nvim_set_hl(0, 'GitSignsChange', { fg = _G.THEME_CONFIG.colors.blue }) -- Blue
+            vim.api.nvim_set_hl(0, 'GitSignsDelete', { fg = _G.THEME_CONFIG.colors.red }) -- Red
         end
     }
 }

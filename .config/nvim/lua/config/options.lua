@@ -43,15 +43,15 @@ local border = {
 }
 
 -- Override handlers
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-    vim.lsp.handlers.hover,
-    { border = border }
-)
-
-vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-    vim.lsp.handlers.signature_help,
-    { border = border }
-)
+-- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+--     vim.lsp.handlers.hover,
+--     { border = border }
+-- )
+--
+-- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+--     vim.lsp.handlers.signature_help,
+--     { border = border }
+-- )
 
 -- Improve highlight groups for better readability
 -- vim.cmd [[
