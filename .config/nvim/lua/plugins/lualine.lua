@@ -7,11 +7,12 @@ return {
         event = "VeryLazy",
         dependencies = {
             "nvim-tree/nvim-web-devicons",
+            "projekt0n/github-nvim-theme",
         },
         opts = function()
             local opts = {
                 options = {
-                    theme = "tokyonight",
+                    theme = "github_dark",
                     globalstatus = true,
                     section_separators = { left = "", right = "" },
                     component_separators = { left = "", right = "" },
@@ -77,7 +78,6 @@ return {
                         { "location", separator = { right = "" }, left_padding = 2 },
                     },
                 },
-                icon = "",
                 inactive_sections = {
                     lualine_a = {},
                     lualine_b = {},
