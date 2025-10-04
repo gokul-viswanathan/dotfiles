@@ -135,6 +135,11 @@ return {
                 -- Merge capabilities
                 config.capabilities = vim.tbl_deep_extend('force', capabilities, config.capabilities or {})
 
+                -- Disable document highlight to remove underlines on current function
+                config.on_attach = function(client, bufnr)
+                    client.server_capabilities.documentHighlightProvider = false
+                end
+
                 -- Setup server with error handling
                 local success, err = pcall(function()
                     vim.lsp.config(server, config)

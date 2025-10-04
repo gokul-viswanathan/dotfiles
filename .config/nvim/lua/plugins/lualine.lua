@@ -19,22 +19,22 @@ return {
                             c = { fg = _G.THEME_CONFIG.colors.fg_dark, bg = "#0d1117" },
                         },
                         insert = {
-                            a = { fg = "#0d1117", bg = "#4c9eff", gui = "bold" }, -- Softer blue
+                            a = { fg = _G.THEME_CONFIG.colors.fg, bg = "#1a1a1a", gui = "bold" },
                             b = { fg = _G.THEME_CONFIG.colors.fg_dark, bg = "#262626" },
                             c = { fg = _G.THEME_CONFIG.colors.fg_dark, bg = "#0d1117" },
                         },
                         visual = {
-                            a = { fg = "#0d1117", bg = _G.THEME_CONFIG.colors.purple, gui = "bold" },
+                            a = { fg = _G.THEME_CONFIG.colors.fg, bg = "#1a1a1a", gui = "bold" },
                             b = { fg = _G.THEME_CONFIG.colors.fg_dark, bg = "#262626" },
                             c = { fg = _G.THEME_CONFIG.colors.fg_dark, bg = "#0d1117" },
                         },
                         replace = {
-                            a = { fg = "#0d1117", bg = _G.THEME_CONFIG.colors.red, gui = "bold" },
+                            a = { fg = _G.THEME_CONFIG.colors.fg, bg = "#1a1a1a", gui = "bold" },
                             b = { fg = _G.THEME_CONFIG.colors.fg_dark, bg = "#262626" },
                             c = { fg = _G.THEME_CONFIG.colors.fg_dark, bg = "#0d1117" },
                         },
                         command = {
-                            a = { fg = "#0d1117", bg = _G.THEME_CONFIG.colors.green, gui = "bold" },
+                            a = { fg = _G.THEME_CONFIG.colors.fg, bg = "#1a1a1a", gui = "bold" },
                             b = { fg = _G.THEME_CONFIG.colors.fg_dark, bg = "#262626" },
                             c = { fg = _G.THEME_CONFIG.colors.fg_dark, bg = "#0d1117" },
                         },
@@ -45,8 +45,8 @@ return {
                         },
                     },
                     globalstatus = true,
-                    section_separators = { left = "", right = "" },
-                    component_separators = { left = "", right = "" },
+                    section_separators = { left = "", right = "" },
+                    component_separators = { left = "", right = "" },
                     disabled_filetypes = { statusline = { "dashboard", "alpha", "starter" } },
                     refresh = {
                         statusline = 1000,
@@ -59,7 +59,6 @@ return {
                     lualine_a = {
                         {
                             "mode",
-                            separator = { left = "" },
                             right_padding = 2,
                             fmt = function(str) return str:sub(1, 1) end -- Show only first letter
                         },
@@ -154,15 +153,14 @@ return {
                     lualine_y = {
                         {
                             "progress",
-                            color = { fg = _G.THEME_CONFIG.colors.yellow },
+                            color = { fg = _G.THEME_CONFIG.colors.fg_dark },
                         },
                     },
                     lualine_z = {
                         {
                             "location",
-                            separator = { right = "" },
                             left_padding = 2,
-                            color = { fg = _G.THEME_CONFIG.colors.orange },
+                            color = { fg = _G.THEME_CONFIG.colors.fg_dark },
                         },
                     },
                 },

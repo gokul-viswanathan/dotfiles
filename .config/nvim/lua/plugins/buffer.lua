@@ -65,20 +65,7 @@ return {
                 show_tab_indicators = true,
                 show_duplicate_prefix = true,    -- whether to show duplicate buffer prefix
                 duplicates_across_groups = true, -- whether to consider duplicate paths in different groups as duplicates
-                separator_style = "slant", -- "slant" | "thick" | "thin" | "padded_slant"
-                -- Custom separator colors for better visibility
-                highlights = {
-                    separator = {
-                        fg = "#3d444d", -- Dimmed separator color instead of pure white
-                        bg = "#0d1117",
-                    },
-                    separator_selected = {
-                        fg = "#3d444d",
-                    },
-                    separator_visible = {
-                        fg = "#3d444d",
-                    },
-                },
+                separator_style = "thin", -- "slant" | "thick" | "thin" | "padded_slant"
                 enforce_regular_tabs = false,    -- false | true
                 offsets = {
                     {

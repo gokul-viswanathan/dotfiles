@@ -27,7 +27,14 @@ vim.opt.scrolloff = 8
 -- Diagnostic display inline
 vim.diagnostic.config({
     virtual_text = true,
-    underline = true
+    underline = {
+        severity = {
+            error = { fg = "#f85149" },
+            warn = { fg = "#f85149" },
+            info = { fg = "#f85149" },
+            hint = { fg = "#f85149" }
+        }
+    }
 })
 
 -- Borders for LSP hover & signature help
