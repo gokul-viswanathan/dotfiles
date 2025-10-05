@@ -39,8 +39,8 @@ return {
             },
             scope = {
                 enabled = true,
-                char = "│",
-                show_start = true,
+                char = "┃",
+                show_start = false,
                 show_end = false,
             },
             exclude = {
@@ -65,20 +65,20 @@ return {
         event = "VeryLazy",
         config = function()
             require("incline").setup({
-        highlight = {
-            groups = {
-                -- Active window
-                InclineNormal = {
-                    guibg = _G.THEME_CONFIG.colors.bg_dark, -- theme background
-                    guifg = _G.THEME_CONFIG.colors.fg, -- theme foreground
+                highlight = {
+                    groups = {
+                        -- Active window
+                        InclineNormal = {
+                            guibg = _G.THEME_CONFIG.colors.bg_dark, -- theme background
+                            guifg = _G.THEME_CONFIG.colors.fg,      -- theme foreground
+                        },
+                        -- Inactive window
+                        InclineNormalNC = {
+                            guibg = _G.THEME_CONFIG.colors.bg_darker, -- darker background
+                            guifg = _G.THEME_CONFIG.colors.fg_dark,   -- muted foreground
+                        },
+                    },
                 },
-                -- Inactive window
-                InclineNormalNC = {
-                    guibg = _G.THEME_CONFIG.colors.bg_darker, -- darker background
-                    guifg = _G.THEME_CONFIG.colors.fg_dark, -- muted foreground
-                },
-            },
-        },
                 window = {
                     margin = { vertical = 0, horizontal = 1 },
                     padding = 1,

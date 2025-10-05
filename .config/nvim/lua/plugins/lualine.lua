@@ -14,34 +14,34 @@ return {
                 options = {
                     theme = {
                         normal = {
-                            a = { fg = _G.THEME_CONFIG.colors.fg, bg = "#1a1a1a", gui = "bold" },
-                            b = { fg = _G.THEME_CONFIG.colors.fg_dark, bg = "#262626" },
-                            c = { fg = _G.THEME_CONFIG.colors.fg_dark, bg = "#0d1117" },
+                            a = { fg = _G.THEME_CONFIG.colors.fg, bg = "#5f875f", gui = "bold" },
+                            b = { fg = _G.THEME_CONFIG.colors.fg_dark, bg = "#444444" },
+                            c = { fg = _G.THEME_CONFIG.colors.fg_dark, bg = "#222222" },
                         },
                         insert = {
-                            a = { fg = _G.THEME_CONFIG.colors.fg, bg = "#1a1a1a", gui = "bold" },
-                            b = { fg = _G.THEME_CONFIG.colors.fg_dark, bg = "#262626" },
-                            c = { fg = _G.THEME_CONFIG.colors.fg_dark, bg = "#0d1117" },
+                            a = { fg = _G.THEME_CONFIG.colors.fg, bg = "#5f87af", gui = "bold" },
+                            b = { fg = _G.THEME_CONFIG.colors.fg_dark, bg = "#444444" },
+                            c = { fg = _G.THEME_CONFIG.colors.fg_dark, bg = "#222222" },
                         },
                         visual = {
-                            a = { fg = _G.THEME_CONFIG.colors.fg, bg = "#1a1a1a", gui = "bold" },
-                            b = { fg = _G.THEME_CONFIG.colors.fg_dark, bg = "#262626" },
-                            c = { fg = _G.THEME_CONFIG.colors.fg_dark, bg = "#0d1117" },
+                            a = { fg = _G.THEME_CONFIG.colors.fg, bg = "#af875f", gui = "bold" },
+                            b = { fg = _G.THEME_CONFIG.colors.fg_dark, bg = "#444444" },
+                            c = { fg = _G.THEME_CONFIG.colors.fg_dark, bg = "#222222" },
                         },
                         replace = {
-                            a = { fg = _G.THEME_CONFIG.colors.fg, bg = "#1a1a1a", gui = "bold" },
-                            b = { fg = _G.THEME_CONFIG.colors.fg_dark, bg = "#262626" },
-                            c = { fg = _G.THEME_CONFIG.colors.fg_dark, bg = "#0d1117" },
+                            a = { fg = _G.THEME_CONFIG.colors.fg, bg = "#af5f5f", gui = "bold" },
+                            b = { fg = _G.THEME_CONFIG.colors.fg_dark, bg = "#444444" },
+                            c = { fg = _G.THEME_CONFIG.colors.fg_dark, bg = "#222222" },
                         },
                         command = {
-                            a = { fg = _G.THEME_CONFIG.colors.fg, bg = "#1a1a1a", gui = "bold" },
-                            b = { fg = _G.THEME_CONFIG.colors.fg_dark, bg = "#262626" },
-                            c = { fg = _G.THEME_CONFIG.colors.fg_dark, bg = "#0d1117" },
+                            a = { fg = _G.THEME_CONFIG.colors.fg, bg = "#87875f", gui = "bold" },
+                            b = { fg = _G.THEME_CONFIG.colors.fg_dark, bg = "#444444" },
+                            c = { fg = _G.THEME_CONFIG.colors.fg_dark, bg = "#222222" },
                         },
                         inactive = {
-                            a = { fg = _G.THEME_CONFIG.colors.fg_darker, bg = "#1a1a1a" },
-                            b = { fg = _G.THEME_CONFIG.colors.fg_darker, bg = "#1a1a1a" },
-                            c = { fg = _G.THEME_CONFIG.colors.fg_darker, bg = "#1a1a1a" },
+                            a = { fg = _G.THEME_CONFIG.colors.fg_darker, bg = "#333333" },
+                            b = { fg = _G.THEME_CONFIG.colors.fg_darker, bg = "#333333" },
+                            c = { fg = _G.THEME_CONFIG.colors.fg_darker, bg = "#333333" },
                         },
                     },
                     globalstatus = true,
@@ -64,7 +64,7 @@ return {
                         },
                     },
                     lualine_b = {
-                        { "branch", icon = "", color = { fg = _G.THEME_CONFIG.colors.grey } },
+                        { "branch", icon = "", color = { fg = "#87afaf" } },
                         {
                             "swenv",
                             icon = "",
@@ -150,19 +150,19 @@ return {
                             },
                         },
                     },
-                    lualine_y = {
-                        {
-                            "progress",
-                            color = { fg = _G.THEME_CONFIG.colors.fg_dark },
-                        },
-                    },
-                    lualine_z = {
-                        {
-                            "location",
-                            left_padding = 2,
-                            color = { fg = _G.THEME_CONFIG.colors.fg_dark },
-                        },
-                    },
+                     lualine_y = {
+                         {
+                             "progress",
+                             color = { fg = _G.THEME_CONFIG.colors.fg },
+                         },
+                     },
+                     lualine_z = {
+                         {
+                             "location",
+                             left_padding = 2,
+                             color = { fg = _G.THEME_CONFIG.colors.fg },
+                         },
+                     },
                 },
                 inactive_sections = {
                     lualine_a = {},

@@ -16,6 +16,23 @@
   margin-right: 3px;
 }
 
+#waybar {
+  /* background: transparent; */
+  background: rgba(17, 17, 27, 0.7); /* Semi-transparent */
+}
+
+#battery.warning {
+  color: #ffaa00;
+}
+
+#battery.critical {
+  color: #ff0000;
+}
+
+#network.disconnected {
+  color: #ff0000;
+}
+
 #custom-dropbox,
 #cpu,
 #power-profiles-daemon,
@@ -35,4 +52,3 @@ tooltip {
 tooltip label {
   padding: 2px;
 }
-

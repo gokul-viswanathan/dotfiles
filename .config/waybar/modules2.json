@@ -22,10 +22,10 @@
       },
     "ignore-workspaces": ["1", "2", "3", "4", "5"],
     },
-    "cpu": {
-      "interval": 5,
-      "format": "󰍛",
-    },
+     "cpu": {
+       "interval": 5,
+       "format": "󰍛 {usage}%",
+     },
     "clock": {
       "format": "{:%A %H:%M}",
       "format-alt": "{:%d %B W%V %Y}",
@@ -82,14 +82,20 @@
       "on-click-right": "pamixer -t",
       "ignored-sinks": ["Easy Effects Sink"]
     },
-    "power-profiles-daemon": {
-      "format": "{icon}",
-      "tooltip-format": "Power profile: {profile}",
-      "tooltip": true,
-      "format-icons": {
-        "power-saver": "󰡳",
-        "balanced":     "󰊚",
-        "performance":  "󰡴"
-      }
-    },
+     "power-profiles-daemon": {
+       "format": "{icon}",
+       "tooltip-format": "Power profile: {profile}",
+       "tooltip": true,
+       "format-icons": {
+         "power-saver": "󰡳",
+         "balanced":     "󰊚",
+         "performance":  "󰡴"
+       }
+     },
+     "custom/dropbox": {
+       "exec": "dropbox status",
+       "format": "{}",
+       "interval": 30,
+       "on-click": "dropbox start"
+     }
 }

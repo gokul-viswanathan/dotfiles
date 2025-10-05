@@ -22,7 +22,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.incsearch = true
 vim.opt.hlsearch = false
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 10
 
 -- Diagnostic display inline
 vim.diagnostic.config({

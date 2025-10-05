@@ -5,11 +5,11 @@ return {
             -- Simple GitSigns configuration
             require('gitsigns').setup({
                 signs = {
-                    add          = { text = '+' }, -- New lines added
-                    change       = { text = '~' }, -- Modified lines
+                    add          = { text = '▎' }, -- New lines added
+                    change       = { text = '▎' }, -- Modified lines
                     delete       = { text = '-' }, -- Deleted lines
                     topdelete    = { text = '‾' }, -- Lines deleted at top
-                    changedelete = { text = '~' }, -- Changed and deleted
+                    changedelete = { text = '▎' }, -- Changed and deleted
                     untracked    = { text = '┆' }, -- Untracked files
                 },
 
@@ -92,9 +92,9 @@ return {
             })
 
             -- Optional: Custom highlights for better visibility
-            vim.api.nvim_set_hl(0, 'GitSignsAdd', { fg = _G.THEME_CONFIG.colors.green }) -- Green
+            vim.api.nvim_set_hl(0, 'GitSignsAdd', { fg = _G.THEME_CONFIG.colors.green })   -- Green
             vim.api.nvim_set_hl(0, 'GitSignsChange', { fg = _G.THEME_CONFIG.colors.blue }) -- Blue
-            vim.api.nvim_set_hl(0, 'GitSignsDelete', { fg = _G.THEME_CONFIG.colors.red }) -- Red
+            vim.api.nvim_set_hl(0, 'GitSignsDelete', { fg = _G.THEME_CONFIG.colors.red })  -- Red
         end
     }
 }
