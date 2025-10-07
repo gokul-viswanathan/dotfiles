@@ -12,9 +12,7 @@ return {
     },
     lazy = false, -- neo-tree will lazily load itself
     keys = {
-        { "<leader>e", "<cmd>Neotree toggle<cr>",     desc = "Toggle Neo-tree" },
-        { "<leader>b", "<cmd>Neotree buffers<cr>",    desc = "Neo-tree Buffers" },
-        { "<leader>g", "<cmd>Neotree git_status<cr>", desc = "Neo-tree Git Status" },
+        { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "Toggle Neo-tree" },
     },
     opts = {
         close_if_last_window = false, -- Close Neo-tree if it's the last window

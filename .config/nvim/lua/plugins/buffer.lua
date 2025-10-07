@@ -13,8 +13,6 @@ return {
             { "<leader>bd", "<cmd>bdelete<cr>",                        desc = "Close Buffer" },
             { "<S-J>",      "<cmd>BufferLineCyclePrev<cr>",            desc = "Prev Buffer" },
             { "<S-k>",      "<cmd>BufferLineCycleNext<cr>",            desc = "Next Buffer" },
-            { "[b",         "<cmd>BufferLineCyclePrev<cr>",            desc = "Prev Buffer" },
-            { "]b",         "<cmd>BufferLineCycleNext<cr>",            desc = "Next Buffer" },
             { "[B",         "<cmd>BufferLineMovePrev<cr>",             desc = "Move buffer prev" },
             { "]B",         "<cmd>BufferLineMoveNext<cr>",             desc = "Move buffer next" },
         },
@@ -65,7 +63,7 @@ return {
                 show_tab_indicators = true,
                 show_duplicate_prefix = true,    -- whether to show duplicate buffer prefix
                 duplicates_across_groups = true, -- whether to consider duplicate paths in different groups as duplicates
-                separator_style = "thin", -- "slant" | "thick" | "thin" | "padded_slant"
+                separator_style = "thick",       -- "slant" | "thick" | "thin" | "padded_slant"
                 enforce_regular_tabs = false,    -- false | true
                 offsets = {
                     {
@@ -94,7 +92,6 @@ return {
                     local icon, hl = devicons.get_icon(opts.filename or "", opts.extension, { default = true })
                     return icon, hl
                 end,
-                -- show_buffer_default_icon = true,  -- whether or not an unrecognised filetype should show a default icon
                 sort_by = 'insert_after_current', -- 'insert_after_current' |'insert_at_end' | 'id' | 'extension' | 'relative_directory' | 'directory' | 'tabs' | function(buffer_a, buffer_b)
                 ---@param opts bufferline.IconFetcherOpts
                 get_element_icon = function(opts)
@@ -102,6 +99,19 @@ return {
                     local icon, _ = devicons.get_icon(opts.filename or "", opts.extension, { default = true })
                     return icon
                 end,
+            },
+            highlights = {
+                buffer_selected = {
+                    fg = "#ffffff",
+                    bg = "#3b82f6",
+                    bold = true,
+                },
+                separator_selected = {
+                    fg = "#3b82f6",
+                },
+                indicator_selected = {
+                    fg = "#3b82f6",
+                },
             },
         },
         config = function(_, opts)

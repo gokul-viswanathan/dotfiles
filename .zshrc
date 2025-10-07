@@ -11,6 +11,7 @@ source <(fzf --zsh)
 #alias 
 alias n='nvim'
 alias vs='code'
+alias oc='opencode'
 alias cs='~/Documents/programs/cursor/Cursor.AppImage'
 alias zed='~/.local/share/zed.app/bin/zed'
 alias ff='fzf --preview "bat --style=numbers --color=always {} || cat {}" --preview-window=right:60%'
