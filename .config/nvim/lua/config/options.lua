@@ -3,8 +3,9 @@ vim.g.maplocalleader = " "
 vim.opt.clipboard = "unnamedplus"
 vim.cmd("set relativenumber")
 vim.cmd("set number")
-vim.opt.tabstop = 4    -- Number of visual spaces per TAB
-vim.opt.shiftwidth = 4 -- Spaces per indent
+vim.opt.tabstop = 2     -- Number of visual spaces per TAB
+vim.opt.shiftwidth = 2  -- Spaces per indent
+vim.opt.softtabstop = 2 -- Spaces per backspace
 vim.opt.expandtab = true
 
 vim.opt.foldmethod = "expr"
@@ -15,8 +16,10 @@ vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
 vim.opt.foldnestmax = 4
 
--- vim.opt.cursorline = true
---
+-- Enable auto indentation
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+-- vim.opt.indentexpr = "v:lua.vim.treesitter.indentexpr()"
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
@@ -50,15 +53,15 @@ local border = {
 }
 
 -- Override handlers
--- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
---     vim.lsp.handlers.hover,
---     { border = border }
--- )
---
--- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
---     vim.lsp.handlers.signature_help,
---     { border = border }
--- )
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+    vim.lsp.handlers.hover,
+    { border = border }
+)
+
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+    vim.lsp.handlers.signature_help,
+    { border = border }
+)
 
 -- Improve highlight groups for better readability
 -- vim.cmd [[

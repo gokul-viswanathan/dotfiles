@@ -13,12 +13,13 @@ return {
                     "markdown", "markdown_inline",
                     "dockerfile", "gitignore", "sql",
                 },
+
                 auto_install = true,
                 highlight = {
                     enable = true,
                     additional_vim_regex_highlighting = false,
                 },
-                indent = { enable = true },
+                indent = { enable = true, disable = { "lua" } },
                 incremental_selection = {
                     enable = true,
                     keymaps = {

@@ -25,6 +25,10 @@ export PATH="$PATH:/opt/nvim-linux64/bin"
 #vscode PATH
 export PATH="$PATH:/home/gokul/Documents/programs/VSCode/bin"
 
+#flyway
+export FLYCTL_INSTALL="/home/gokul/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
+
 #starship
 export STARSHIP_CONFIG=/home/gokul/.config/starship/starship.toml
 

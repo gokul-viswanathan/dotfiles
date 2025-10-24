@@ -52,6 +52,12 @@ return {
 
         local telescope = require("telescope")
         telescope.setup({
+            defaults = {
+                mappings = {
+                    i = { ["<c-t>"] = require("trouble.sources.telescope").open },
+                    n = { ["<c-t>"] = require("trouble.sources.telescope").open },
+                },
+            },
             extensions = {
                 file_browser = {
                     theme = "ivy",

@@ -30,8 +30,7 @@ return {
                 left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
                 middle_mouse_command = nil, -- can be a string | function, see "Mouse actions"
                 indicator = {
-                    icon = '▎', -- this should be omitted if indicator style is not 'icon'
-                    style = 'icon', -- 'icon' | 'underline' | 'none'
+                    style = 'none', -- 'icon' | 'underline' | 'none'
                 },
                 buffer_close_icon = '󰅖',
                 modified_icon = '●',
@@ -63,7 +62,7 @@ return {
                 show_tab_indicators = true,
                 show_duplicate_prefix = true,    -- whether to show duplicate buffer prefix
                 duplicates_across_groups = true, -- whether to consider duplicate paths in different groups as duplicates
-                separator_style = "thick",       -- "slant" | "thick" | "thin" | "padded_slant"
+                separator_style = "thin",       -- "slant" | "thick" | "thin" | "padded_slant"
                 enforce_regular_tabs = false,    -- false | true
                 offsets = {
                     {
@@ -87,11 +86,6 @@ return {
                     },
                 },
                 color_icons = true, -- whether or not to add the filetype icon highlights
-                get_element_icon = function(opts)
-                    local devicons = require("nvim-web-devicons")
-                    local icon, hl = devicons.get_icon(opts.filename or "", opts.extension, { default = true })
-                    return icon, hl
-                end,
                 sort_by = 'insert_after_current', -- 'insert_after_current' |'insert_at_end' | 'id' | 'extension' | 'relative_directory' | 'directory' | 'tabs' | function(buffer_a, buffer_b)
                 ---@param opts bufferline.IconFetcherOpts
                 get_element_icon = function(opts)
@@ -102,15 +96,7 @@ return {
             },
             highlights = {
                 buffer_selected = {
-                    fg = "#ffffff",
-                    bg = "#3b82f6",
-                    bold = true,
-                },
-                separator_selected = {
-                    fg = "#3b82f6",
-                },
-                indicator_selected = {
-                    fg = "#3b82f6",
+                    fg = "#d0d0d0",
                 },
             },
         },
