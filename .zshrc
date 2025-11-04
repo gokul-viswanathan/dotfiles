@@ -12,7 +12,7 @@ source <(fzf --zsh)
 alias n='nvim'
 alias vs='code'
 alias oc='opencode'
-alias cs='~/Documents/programs/cursor/Cursor.AppImage'
+alias cs='cursor'
 alias zed='~/.local/share/zed.app/bin/zed'
 alias ff='fzf --preview "bat --style=numbers --color=always {} || cat {}" --preview-window=right:60%'
 alias fg='rg --line-number --no-heading --color=always . | fzf --ansi --delimiter : --nth 3.. --preview "bat --style=numbers --color=always {1} --highlight-line {2}"'
