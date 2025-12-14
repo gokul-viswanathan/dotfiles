@@ -41,6 +41,7 @@ return {
                 javascriptreact = true,
                 python = true,
                 java = true,
+                rust = true,
             },
             copilot_node_command = 'node',
             server_opts_overrides = {

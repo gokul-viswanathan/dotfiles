@@ -1,0 +1,35 @@
+# Vim/Neovim
+*.swp
+*.swo
+*~
+.*.sw[a-z]
+
+# Nvim lazy-lock (generated file - optional, some prefer to commit it)
+.config/nvim/lazy-lock.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.bak
+*_backup_*/
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+.cache/
+
+# Plugin data that shouldn't be versioned
+.config/nvim/.luarc.json
+.config/nvim/plugin/
+
+# Local customizations (optional)
+local.sh
+*.local

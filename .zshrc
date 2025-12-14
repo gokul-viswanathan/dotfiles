@@ -13,7 +13,6 @@ alias n='nvim'
 alias vs='code'
 alias oc='opencode'
 alias cs='cursor'
-alias zed='~/.local/share/zed.app/bin/zed'
 alias ff='fzf --preview "bat --style=numbers --color=always {} || cat {}" --preview-window=right:60%'
 alias fg='rg --line-number --no-heading --color=always . | fzf --ansi --delimiter : --nth 3.. --preview "bat --style=numbers --color=always {1} --highlight-line {2}"'
 alias ls='eza -lh --icons=always --color=always --group-directories-first --git --time-style=long-iso --no-permissions --no-user'
@@ -21,9 +20,6 @@ alias lt='eza --tree --level=2 --icons=always --group-directories-first'
 
 #for neovim
 export PATH="$PATH:/opt/nvim-linux64/bin"
-
-#vscode PATH
-export PATH="$PATH:/home/gokul/Documents/programs/VSCode/bin"
 
 #flyway
 export FLYCTL_INSTALL="/home/gokul/.fly"
@@ -59,7 +55,12 @@ zle-line-init() {
     echo -ne "\e[5 q"  # beam cursor
 }
 zle -N zle-line-init
-
+set -o vi
 # Reset cursor on exit
 preexec() { echo -ne '\e[5 q' ;}
 
+#carapase setup 
+# ${UserConfigDir}/zsh/.zshrc
+export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
+zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+source <(carapace _carapace)

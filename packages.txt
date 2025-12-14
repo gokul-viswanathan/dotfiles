@@ -1,0 +1,27 @@
+# Core CLI Tools
+bat              # Better cat with syntax highlighting
+eza              # Modern ls replacement
+fd               # Better find alternative
+ripgrep          # Fast grep alternative (rg)
+fzf              # Fuzzy finder
+zoxide           # Smarter cd command
+
+# Development Tools
+neovim           # Modern vim-based editor
+tmux             # Terminal multiplexer
+git-delta        # Better git diff viewer
+lazygit          # TUI for git
+
+# System Monitoring
+btop             # Resource monitor
+htop             # Interactive process viewer
+
+# Shell Enhancements
+starship         # Cross-shell prompt
+carapace-bin     # Multi-shell completion engine
+
+# Terminal Emulator
+ghostty          # Terminal emulator
+
+# Package Manager
+yay              # AUR helper for Arch-based systems
