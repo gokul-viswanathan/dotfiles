@@ -55,9 +55,17 @@ zle-line-init() {
     echo -ne "\e[5 q"  # beam cursor
 }
 zle -N zle-line-init
+
 set -o vi
 # Reset cursor on exit
 preexec() { echo -ne '\e[5 q' ;}
+
+autoload -Uz history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+
+bindkey '^[[A' history-beginning-search-backward-end  # Up arrow
+bindkey '^[[B' history-beginning-search-forward-end   # Down arrow
 
 #carapase setup 
 # ${UserConfigDir}/zsh/.zshrc

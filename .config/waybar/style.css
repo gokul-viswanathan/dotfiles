@@ -34,15 +34,27 @@
 }
 
 #custom-dropbox,
+#custom-weather,
 #cpu,
+#memory,
 #power-profiles-daemon,
 #battery,
 #network,
 #bluetooth,
 #pulseaudio,
-#clock {
+#clock,
+#mpris {
   min-width: 12px;
-  margin-right: 13px;
+  padding: 0 8px;
+  margin: 0 4px;
+}
+
+#custom-weather {
+  margin-right: 8px;
+}
+
+#mpris {
+  margin-right: 12px;
 }
 
 tooltip {
