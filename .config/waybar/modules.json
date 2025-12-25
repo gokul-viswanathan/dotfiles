@@ -45,14 +45,14 @@
     }
   },
   "bluetooth": {
-    "format": "",
+    "format": "",
     "format-disabled": "󰂲",
-    "format-connected": "",
+    "format-connected": "",
     "tooltip-format": "Devices connected: {num_connections}",
     "on-click": "GTK_THEME=Adwaita-dark blueberry"
   },
   "pulseaudio": {
-    "format": "",
+    "format": "",
     "format-muted": "󰝟",
     "scroll-step": 5,
     "on-click": "GTK_THEME=Adwaita-dark pavucontrol",

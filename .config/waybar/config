@@ -13,15 +13,13 @@
     ],
     "modules-right": [
       "custom/weather",
-      "clock",
-      "custom/dropbox",
       "bluetooth",
       "network",
       "pulseaudio",
       "cpu",
       "memory",
-      "power-profiles-daemon",
-      "battery"
+      "battery",
+      "clock"
     ],
     "hyprland/workspaces": {
       "on-click": "activate",
@@ -64,15 +62,13 @@
     ],
     "modules-right": [
       "custom/weather",
-      "clock",
-      "custom/dropbox",
       "bluetooth",
       "network",
       "pulseaudio",
       "cpu",
       "memory",
-      "power-profiles-daemon",
-      "battery"
+      "battery",
+      "clock"
     ],
     "hyprland/workspaces": {
       "on-click": "activate",
