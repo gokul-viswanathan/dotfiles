@@ -34,3 +34,5 @@ keymap.set("n", "<C-w><down>", "<C-w>-")
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Prev diagnostic" })
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
 vim.keymap.set("n", "<leader>xf", vim.diagnostic.open_float, { desc = "Line diagnostics" })
+
+vim.keymap.set("n", "<leader>lf", function() vim.lsp.buf.format({ async = true }) end, { desc = "Format buffer" })

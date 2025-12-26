@@ -4,7 +4,7 @@ return {
         event = "VeryLazy",
         opts = {
             preset = "modern",
-            delay = 500,
+            delay = 300,
             icons = {
                 mappings = false,
             },

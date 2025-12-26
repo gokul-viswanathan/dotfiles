@@ -19,6 +19,7 @@ return {
                     enable = true,
                     additional_vim_regex_highlighting = false,
                 },
+                -- Lua indent disabled: treesitter indent can be inconsistent with Lua's style
                 indent = { enable = true, disable = { "lua" } },
                 incremental_selection = {
                     enable = true,

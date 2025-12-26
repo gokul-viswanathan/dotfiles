@@ -27,17 +27,13 @@ vim.opt.incsearch = true
 vim.opt.hlsearch = false
 vim.opt.scrolloff = 10
 
--- Diagnostic display inline
+-- Diagnostic display (colors inherit from theme highlight groups)
+-- Note: tiny-inline-diagnostic plugin may override virtual_text
 vim.diagnostic.config({
   virtual_text = true,
-  underline = {
-    severity = {
-      error = { fg = "#f85149" },
-      warn = { fg = "#f85149" },
-      info = { fg = "#f85149" },
-      hint = { fg = "#f85149" }
-    }
-  }
+  underline = true,
+  signs = true,
+  severity_sort = true,
 })
 
 vim.o.winborder = 'rounded'

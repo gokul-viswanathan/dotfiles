@@ -21,7 +21,7 @@ return {
         { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Live grep" },
         { "<leader>fG", "<cmd>Telescope live_grep_args<cr>", desc = "Live grep with args" },
         { "<leader>fw", "<cmd>Telescope grep_string<cr>", desc = "Grep word under cursor" },
-        { "<leader>fs", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Search in buffer" },
+        { "<leader>f/", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Search in buffer" },
 
         -- Buffer operations
         { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Find buffers" },
@@ -33,9 +33,8 @@ return {
         { "<leader>fd", "<cmd>Telescope diagnostics<cr>", desc = "Diagnostics" },
         { "<leader>fs", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Document symbols" },
         { "<leader>fS", "<cmd>Telescope lsp_workspace_symbols<cr>", desc = "Workspace symbols" },
-        { "<leader>fr", "<cmd>Telescope lsp_references<cr>", desc = "References" },
         { "<leader>fi", "<cmd>Telescope lsp_implementations<cr>", desc = "Implementations" },
-        { "<leader>ft", "<cmd>Telescope lsp_type_definitions<cr>", desc = "Type definitions" },
+        { "<leader>fy", "<cmd>Telescope lsp_type_definitions<cr>", desc = "Type definitions" },
 
         -- Git operations
         { "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Git commits" },
@@ -44,7 +43,7 @@ return {
 
         -- Todo operations
         { "<leader>ft", "<cmd>TodoTelescope<cr>", desc = "Find todos" },
-        { "<leader>fT", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "Find specific todos" },
+        { "<leader>fT", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "Find TODO/FIX" },
     },
     config = function()
         vim.g.loaded_netrw = 1
