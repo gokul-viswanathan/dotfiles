@@ -14,7 +14,7 @@ return {
 
       -- Mode colors using theme palette
       local mode_colors = {
-        normal = colors.green_muted,
+        normal = colors.green,
         insert = colors.blue,
         visual = colors.orange,
         replace = colors.red,
@@ -152,7 +152,7 @@ return {
             { "progress", color = { fg = colors.fg } },
           },
           lualine_z = {
-            { "location", padding = { left = 1, right = 1 }, color = { fg = colors.fg } },
+            { "location", padding = { left = 1, right = 1 }, color = { fg = colors.bg } },
           },
         },
         inactive_sections = {

@@ -27,20 +27,19 @@ local THEME_CONFIG = {
   name = "github_dark_default",
   style = "dark_default",
   colors = {
-    -- GitHub Dark Default theme colors
+    -- GitHub Dark Default theme colors (muted palette)
     bg = "#0d1117",          -- background
     bg_dark = "#161b22",     -- darker background
     bg_darker = "#0d1117",   -- even darker background
     fg = "#c9d1d9",          -- foreground
     fg_dark = "#8b949e",     -- muted foreground
     fg_darker = "#6e7681",   -- more muted foreground
-    blue = "#58a6ff",        -- blue accent
-    green = "#56d364",       -- green accent
-    green_muted = "#7c9f7c", -- green accent (muted)
-    red = "#f85149",         -- red accent
-    yellow = "#d29922",      -- yellow accent
-    purple = "#bc8cff",      -- purple accent
-    orange = "#d29922",      -- orange accent
+    blue = "#7a9fbf",        -- blue accent (muted)
+    green = "#7c9f7c",       -- green accent (muted)
+    red = "#c97a77",         -- red accent (muted)
+    yellow = "#b5a167",      -- yellow accent (muted)
+    purple = "#a08cb0",      -- purple accent (muted)
+    orange = "#c49a6c",      -- orange accent (muted)
   }
 }
 
