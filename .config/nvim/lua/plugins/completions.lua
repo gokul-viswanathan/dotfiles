@@ -45,9 +45,9 @@ return {
                 Operator = " ",
                 TypeParameter = " ",
             },
-            border = "rounded",
         },
         completion = {
+            menu = { border = "rounded" },
             accept = { auto_brackets = { enabled = true } },
             documentation = {
                 auto_show = true,

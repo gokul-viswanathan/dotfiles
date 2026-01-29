@@ -10,11 +10,14 @@ return {
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = {
-          "lua_ls", "ts_ls", "basedpyright", "jdtls", "gopls",
+          "lua_ls", "ts_ls", "basedpyright", "gopls",
           "rust_analyzer", "html", "cssls", "jsonls", "yamlls",
           "bashls", "dockerls", "sqls", "ruff"
         },
-        automatic_installation = true,         -- Changed from automatic_enable
+        automatic_installation = true,
+        automatic_enable = {
+          exclude = { "jdtls" }, -- handled by nvim-jdtls plugin
+        },
       })
     end
   },
@@ -79,13 +82,16 @@ return {
             },
           },
           on_new_config = function(config, root_dir)
-            local venv_path = root_dir .. "/venv/bin/python"
+            local venv_paths = {
+              root_dir .. "/.venv/bin/python",
+              root_dir .. "/venv/bin/python",
+            }
             if vim.fn.executable(venv_path) == 1 then
               config.settings.python.pythonPath = venv_path
             end
           end,
         },
-        jdtls = {},
+        -- jdtls configured separately via nvim-jdtls plugin (see ftplugin/java.lua)
         gopls = {
           settings = {
             gopls = {

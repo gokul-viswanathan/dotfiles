@@ -4,6 +4,7 @@
     "format": "󰍛 {usage}%"
   },
   "clock": {
+    "timezone": "America/New_York",
     "format": "{:%a %d %b | %H:%M}",
     "format-alt": "{:%A, %d %B %Y | %H:%M:%S}",
     "tooltip-format": "<tt>{calendar}</tt>",
