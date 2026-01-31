@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sudo pacman:*)",
+      "Bash(pacman:*)",
+      "Bash(chmod:*)",
+      "Bash(tree:*)",
+      "Bash([ -f .gitignore ])"
+    ]
+  }
+}

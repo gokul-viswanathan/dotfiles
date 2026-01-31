@@ -1,0 +1,21 @@
+# Default settings
+default-timeout=5000
+max-visible=5
+sort=-time
+
+# Default appearance
+font=monospace 10
+background-color=#2e3440
+text-color=#d8dee9
+border-color=#88c0d0
+border-size=2
+padding=10
+margin=10
+
+# WhatsApp notifications - hide message content
+[app-name="WhatsApp"]
+format=<b>%s</b>\n(message hidden)
+
+# Alternative if using WhatsApp Web in browser
+[summary~="WhatsApp"]
+format=<b>%s</b>\n(message hidden)

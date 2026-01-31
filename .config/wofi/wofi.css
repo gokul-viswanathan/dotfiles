@@ -1,0 +1,87 @@
+@define-color	selected-text  #7dcfff;
+@define-color	text  #cfc9c2;
+@define-color	base  #1a1b26;
+@define-color	surface  #24283b;
+@define-color	border  #414868;
+@define-color	muted  #565f89;
+
+* {
+  font-family: 'CaskaydiaMono Nerd Font', monospace;
+  font-size: 18px;
+}
+
+window {
+  margin: 0px;
+  padding: 20px;
+  background-color: @base;
+  opacity: 0.95;
+  border-radius: 12px;
+  border: 2px solid @border;
+}
+
+#inner-box {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: @base;
+}
+
+#outer-box {
+  margin: 0;
+  padding: 20px;
+  border: none;
+  background-color: @base;
+}
+
+#scroll {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: @base;
+}
+
+#input {
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: none;
+  background-color: @surface;
+  border-radius: 8px;
+  color: @text;
+}
+
+#input:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
+#text {
+  margin: 5px;
+  border: none;
+  color: @text;
+}
+
+#entry {
+  background-color: @base;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+#entry:hover {
+  background-color: @surface;
+}
+
+#entry:selected {
+  outline: none;
+  border: none;
+  background-color: @surface;
+}
+
+#entry:selected #text {
+  color: @selected-text;
+}
+
+#entry image {
+  -gtk-icon-transform: scale(0.7);
+}
