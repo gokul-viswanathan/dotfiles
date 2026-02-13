@@ -44,8 +44,8 @@
 font-family = JetBrains Mono
 font-size = 13
 
-background = #000000
-# theme = Catppuccin Mocha
+# background = #000000
+theme = Nvim Dark
 
 cursor-style = bar
 cursor-style-blink = false
