@@ -27,13 +27,26 @@ vim.opt.incsearch = true
 vim.opt.hlsearch = false
 vim.opt.scrolloff = 10
 
--- Diagnostic display (colors inherit from theme highlight groups)
--- Note: tiny-inline-diagnostic plugin may override virtual_text
+-- Diagnostic display
+vim.opt.signcolumn = "yes"
 vim.diagnostic.config({
-  virtual_text = true,
+  virtual_text = false,
+  virtual_lines = { current_line = true },
   underline = true,
-  signs = true,
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = "✘",
+      [vim.diagnostic.severity.WARN] = "▲",
+      [vim.diagnostic.severity.INFO] = "ℹ",
+      [vim.diagnostic.severity.HINT] = "⚑",
+    },
+  },
   severity_sort = true,
+  update_in_insert = false,
+  float = {
+    source = "if_many",
+    border = "rounded",
+  },
 })
 
 vim.o.winborder = 'rounded'
