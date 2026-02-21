@@ -45,14 +45,14 @@ font-family = JetBrains Mono
 font-size = 13
 
 # background = #000000
-theme = Nvim Dark
+theme = Kanagawa Wave 
 
 cursor-style = bar
 cursor-style-blink = false
 
 window-decoration = true
 window-padding-x = 8
-window-padding-y = 8
+window-padding-y = 4
 
 mouse-hide-while-typing = true
 copy-on-select = clipboard
